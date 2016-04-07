@@ -1,0 +1,30 @@
+// pch公用宏
+
+#ifdef __OBJC__
+
+
+
+
+#import "UIView+Frame.h"
+#import "UIBarButtonItem+Create.h"
+#import "UIImage+Resizable.h"
+#import "Weibocfg.h"
+
+#import "Common.h"
+
+
+
+#ifdef DEBUG
+//#define MLOG(...)  printf("\n\t<%s line%d>\n%s\n", __FUNCTION__,__LINE__,[[NSString stringWithFormat:__VA_ARGS__] UTF8String])
+#define MLOG(...)  printf("<%s line%d>%s\n", __FUNCTION__,__LINE__,[[NSString stringWithFormat:__VA_ARGS__] UTF8String])
+
+#else
+#define MLOG(...)
+#endif
+
+#if !defined(DEBUG) && !defined (SD_VERBOSE)
+#define NSLog(...)
+#endif
+
+
+#endif
